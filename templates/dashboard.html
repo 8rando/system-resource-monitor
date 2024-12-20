@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Resource Dashboard</title>
+</head>
+<body>
+    <h1>System Resource Dashboard</h1>
+    <table border="1">
+        <tr>
+            <th>Timestamp</th>
+            <th>CPU Usage (%)</th>
+            <th>Memory Usage</th>
+            <th>Disk Usage (%)</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <th>{{ row[0] }}</th>
+            <th>{{ row[1] }}</th>
+            <th>{{ row[2] }}</th>
+            <th>{{ row[3] }}</th>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
