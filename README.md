@@ -1,99 +1,63 @@
-# **System Resource Monitor**
 
-## **Project Overview**  
-This is a Python-based system resource monitor that displays real-time information about CPU usage, memory usage, and disk space. It is a lightweight command-line tool designed for learning system monitoring concepts and scripting with Python.  
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/de146ffb-d2a9-4d08-b80d-8d37a27e7be6" />
 
----
 
-## **Features**  
-- Displays real-time CPU, memory, and disk usage.  
-- Simple command-line interface for ease of use.  
-- Updates resource statistics every few seconds for continuous monitoring.  
+# System Resource Monitor
+
+## Overview
+The **System Resource Monitor** is a Python-based tool that tracks real-time CPU, memory, and disk usage. It logs resource usage into an SQLite database and displays the data in a web-based dashboard built with Flask. This project is ideal for learning Python, Flask, SQLite, and basic web development concepts.
 
 ---
 
-## **Requirements**  
-- Python 3.11.9 installed on the system.  
-- The `psutil` library for retrieving system resource information.  
+## Features
+- Logs system resource usage (CPU, memory, disk) at regular intervals using the **System Logger**.
+- Displays logged data in a **Flask Web Dashboard** for easy visualization.
+- Stores resource usage data in an **SQLite database** for simplicity.
+- Lightweight and easy to set up with a Python virtual environment.
 
 ---
 
-## **Setup Instructions**  
-
-1. **Clone the Repository**  
-   Clone the project to your local machine:  
-   ```bash
-   git clone https://github.com/<your-username>/system-resource-monitor.git
-   cd system-resource-monitor
-   ```
-
-2. **Install Dependencies**  
-   Use `pip` to install the required library:  
-   ```bash
-   pip install psutil
-   ```
-
-3. **Run the Script**  
-   Execute the script to start monitoring system resources:  
-   ```bash
-   python monitor.py
-   ```
+## Requirements
+- **Python 3.x** (tested with Python 3.8+)
+- **Flask** (web framework)
+- **psutil** (for system monitoring)
+- **SQLite** (comes pre-installed with Python)
 
 ---
 
-## **Example Usage**  
+## Setup Instructions
 
-### **Sample Output**  
+### **1. Clone the Repository**
+Clone the repository to your local machine:
+```bash
+git clone https://github.com/<your-username>/system-resource-monitor.git
+cd system-resource-monitor
+
+
+## 2. Set Up a Virtual Environment
+
+Create and activate a Python virtual environment to isolate dependencies:
+
+```bash
+# Create a virtual environment
+python3 -m venv venv
+
+# Install Dependencies
+pip install -r requirements.txt
+
+# The System Logger (monitor.py) logs CPU, memory, and disk usage to an SQLite database at regular intervals:
+python3 monitor.py
+
+# - This script creates or updates the resources.db SQLite database.
+# - Data is logged every few seconds with timestamps.
+
+# The Flask Web Server (app.py) serves the web dashboard:
+python3 app.py
+
+# Activate the virtual environment
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
 ```
-=== System Resource Monitor ===
-Press CTRL+C to stop the program.
------------------------------
-CPU Usage: 23%
-Memory Usage: 45%
-Disk Usage: 61%
------------------------------
-CPU Usage: 25%
-Memory Usage: 47%
-Disk Usage: 62%
------------------------------
-```
-
----
-
-## **How It Works**  
-1. The script uses the `psutil` library to collect system resource data.  
-2. It retrieves the following metrics:  
-   - **CPU Usage**: Percentage of CPU currently being used.  
-   - **Memory Usage**: Percentage of RAM in use.  
-   - **Disk Usage**: Percentage of storage space used on the root directory.  
-3. The information is printed to the terminal and refreshed every 2 seconds.
-
----
-
-## **Project Structure**  
-```
-system-resource-monitor/
-│-- monitor.py        # Main script to monitor system resources
-```
-
----
-
-## **Potential Improvements**  
-- Add logging to save resource data to a file.  
-- Build a web-based dashboard using Flask to visualize the data.  
-- Add alerting for when CPU, memory, or disk usage crosses a set threshold.  
-- Include graphing for historical trends using libraries like Matplotlib or Plotly.  
-
----
-
-## **Technologies Used**  
-- **Python**  
-- **psutil**: To retrieve CPU, memory, and disk information.  
-
----
-
-## **License**  
-This project is open-source and licensed under the MIT License.  
-
----
+# License
+This project is open-source and licensed under the MIT License.
 
